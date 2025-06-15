@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="mm"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -208,9 +208,9 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="-12.7" y1="-8.89" x2="11.43" y2="-8.89" width="0.127" layer="21"/>
 <pad name="VCC" x="-10.16" y="-7.62" drill="1"/>
 <pad name="SDA" x="-6.35" y="-7.62" drill="1"/>
-<pad name="SCL" x="-2.54" y="-7.62" drill="1"/>
-<pad name="CSB" x="1.27" y="-7.62" drill="1"/>
-<pad name="SDO" x="5.08" y="-7.62" drill="1"/>
+<pad name="SCL" x="1.27" y="-7.62" drill="1"/>
+<pad name="CSB" x="5.08" y="-7.62" drill="1"/>
+<pad name="SDO" x="-2.54" y="-7.62" drill="1"/>
 <pad name="GND" x="8.89" y="-7.62" drill="1"/>
 <wire x1="-12.7" y1="7.62" x2="-12.7" y2="-8.89" width="0.127" layer="21"/>
 <wire x1="11.43" y1="-8.89" x2="11.43" y2="7.62" width="0.127" layer="21"/>
@@ -226,11 +226,11 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="-27.94" y1="-20.32" x2="-27.94" y2="17.78" width="0.254" layer="94"/>
 <pin name="VCC" x="-20.32" y="-20.32" length="middle" rot="R270"/>
 <pin name="SDA" x="-12.7" y="-20.32" length="middle" rot="R270"/>
-<pin name="SCL" x="-5.08" y="-20.32" length="middle" rot="R270"/>
-<pin name="CSB" x="2.54" y="-20.32" length="middle" rot="R270"/>
+<pin name="SCL" x="2.54" y="-20.32" length="middle" rot="R270"/>
+<pin name="CSB" x="10.16" y="-20.32" length="middle" rot="R270"/>
 <circle x="-22.86" y="12.7" radius="3.5921" width="0.254" layer="94"/>
 <circle x="22.86" y="12.7" radius="3.5921" width="0.254" layer="94"/>
-<pin name="SDO" x="10.16" y="-20.32" length="middle" rot="R270"/>
+<pin name="SDO" x="-5.08" y="-20.32" length="middle" rot="R270"/>
 <pin name="GND" x="17.78" y="-20.32" length="middle" rot="R270"/>
 <text x="-2.54" y="12.7" size="1.27" layer="94">DEVICE1</text>
 </symbol>
@@ -806,8 +806,8 @@ DIN A4, landscape with location and doc. field</description>
 </classes>
 <parts>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
-<part name="U$1" library="Cactus_Library" deviceset="DEVICE1" device=""/>
 <part name="BOARD1" library="ESP32-DEVKITV1" deviceset="ESP32DEVKITV1" device=""/>
+<part name="U$2" library="Cactus_Library" deviceset="DEVICE1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -819,10 +819,10 @@ DIN A4, landscape with location and doc. field</description>
 <attribute name="LAST_DATE_TIME" x="212.09" y="2.54" size="2.286" layer="94"/>
 <attribute name="SHEET" x="225.425" y="-2.54" size="2.54" layer="94"/>
 </instance>
-<instance part="U$1" gate="G$1" x="185.42" y="38.1" smashed="yes" rot="R180"/>
 <instance part="BOARD1" gate="G$1" x="68.58" y="45.72" smashed="yes">
 <attribute name="NAME" x="71.755" y="103.505" size="1.27" layer="95"/>
 </instance>
+<instance part="U$2" gate="G$1" x="185.42" y="38.1" smashed="yes" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -836,42 +836,42 @@ DIN A4, landscape with location and doc. field</description>
 <junction x="66.04" y="58.42"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
 <wire x1="167.64" y1="58.42" x2="167.64" y2="66.04" width="0.1524" layer="91"/>
 <label x="157.48" y="66.04" size="1.778" layer="95"/>
 <wire x1="167.64" y1="66.04" x2="154.94" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="SDA"/>
 <wire x1="198.12" y1="58.42" x2="198.12" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="BOARD1" gate="G$1" pin="D23"/>
 <wire x1="198.12" y1="91.44" x2="106.68" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="SDA"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="CSB"/>
-<wire x1="182.88" y1="58.42" x2="182.88" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="BOARD1" gate="G$1" pin="D5"/>
-<wire x1="106.68" y1="73.66" x2="182.88" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="58.42" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="SCL"/>
+<pinref part="BOARD1" gate="G$1" pin="D18"/>
+<wire x1="182.88" y1="76.2" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="SDO"/>
-<wire x1="175.26" y1="78.74" x2="175.26" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="BOARD1" gate="G$1" pin="D19"/>
-<wire x1="175.26" y1="78.74" x2="106.68" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="CSB"/>
+<pinref part="BOARD1" gate="G$1" pin="D5"/>
+<wire x1="175.26" y1="73.66" x2="175.26" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="73.66" x2="175.26" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="SCL"/>
-<pinref part="BOARD1" gate="G$1" pin="D18"/>
-<wire x1="190.5" y1="76.2" x2="190.5" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="190.5" y1="76.2" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="78.74" x2="190.5" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="SDO"/>
+<pinref part="BOARD1" gate="G$1" pin="D19"/>
+<wire x1="106.68" y1="78.74" x2="190.5" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -883,10 +883,10 @@ DIN A4, landscape with location and doc. field</description>
 <junction x="66.04" y="55.88"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
 <wire x1="205.74" y1="58.42" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="66.04" x2="215.9" y2="66.04" width="0.1524" layer="91"/>
 <label x="210.82" y="66.04" size="1.778" layer="95"/>
+<pinref part="U$2" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 </nets>
